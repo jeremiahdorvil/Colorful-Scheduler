@@ -9,6 +9,7 @@ You can see each hour is color coded. Red is the present hour, green is future h
 You can also input comments on each of the lines and click the the save button to keep your todo list.
 
 ## Live URL and Display
--
+- https://jeremiahdorvil.github.io/Colorful-Scheduler/
+- image.png
 
 

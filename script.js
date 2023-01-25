@@ -19,18 +19,18 @@ $(function () {
 
     // Added a listener for click events on the save button. 
 
-    saveEl.textContent = save
-    saveEl.addEventListener("click", function(event) {
-        event.preventDefault();
+    // saveEl.textContent = save
+    // saveEl.addEventListener("click", function(event) {
+    //     event.preventDefault();
            
-        var notes = {
-                  hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17: hour.value,
-                  comment: comment.value.trim()
-                };
+    //     var notes = {
+    //               hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17: hour.value,
+    //               comment: comment.value.trim()
+    //             };
                 
-           localStorage.setItem("notes", JSON.stringify(notes));
-           pullNotesFromStorage();          
-        });
+    //        localStorage.setItem("notes", JSON.stringify(notes));
+    //        pullNotesFromStorage();          
+    //     });
     
     // Added code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour.
@@ -58,16 +58,16 @@ $(function () {
     // Added code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. 
 
-    function pullNotesFromStorage() {
-        var message = $(".description").text();
-        message = localStorage.getItem("notes");
-        if (message) {
-            message = JSON.parse(message);
-        } else {
-            message = [];
-        }
-        return message;
-    }
+    // function pullNotesFromStorage() {
+    //     var message = $(".description").text();
+    //     message = localStorage.getItem("notes");
+    //     if (message) {
+    //         message = JSON.parse(message);
+    //     } else {
+    //         message = [];
+    //     }
+    //     return message;
+    // }
 
     // Added code to display the current date in the header of the page.
     function displayTime() {
