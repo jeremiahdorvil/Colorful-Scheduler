@@ -10,6 +10,7 @@ You can also input comments on each of the lines and click the the save button t
 
 ## Live URL and Display
 - https://jeremiahdorvil.github.io/Colorful-Scheduler/
-- image.png
+![screenshot](https://user-images.githubusercontent.com/113854254/214657275-1695e301-0a72-4e42-8ea9-02687d909c8e.JPG)
+
 
 
