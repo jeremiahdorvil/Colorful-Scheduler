@@ -1,6 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
 $(function () {
     var saveEl = $(".saveBtn");
     var hour8 = $("#hour-8");
@@ -15,23 +16,17 @@ $(function () {
     var hour17 = $("#hour-17");
     var timeDisplayEl = $('#currentDay')
     var save
+    var message = $(".description").text();
 
 
     // Added a listener for click events on the save button. 
 
-    // saveEl.textContent = save
-    // saveEl.addEventListener("click", function(event) {
-    //     event.preventDefault();
-           
-    //     var notes = {
-    //               hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17: hour.value,
-    //               comment: comment.value.trim()
-    //             };
-                
-    //        localStorage.setItem("notes", JSON.stringify(notes));
-    //        pullNotesFromStorage();          
-    //     });
-    
+    saveEl.on("click", function(event) {
+        event.preventDefault();
+        saveNotesToStorage();
+    });
+    save = saveEl.textContent
+
     // Added code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour.
    
@@ -58,16 +53,32 @@ $(function () {
     // Added code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. 
 
-    // function pullNotesFromStorage() {
-    //     var message = $(".description").text();
-    //     message = localStorage.getItem("notes");
-    //     if (message) {
-    //         message = JSON.parse(message);
-    //     } else {
-    //         message = [];
-    //     }
-    //     return message;
-    // }
+    function saveNotesToStorage() {
+    var notes = {
+        hour: whatHour,
+        comment: message.value
+      };
+    var whatHour = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17];
+    for(let i = 0; i > whatHour.length; i++)
+    whatHour[i];
+    
+    if(this !== null){
+      localStorage.setItem("notes", JSON.stringify(notes));
+        } else{
+    return;
+    }};
+
+    function pullNotesFromStorage() {
+        message = localStorage.getItem("notes");
+        if (message) {
+            save = JSON.parse(message);
+        } else {
+            message = [];
+        }
+        return message;
+    };
+    pullNotesFromStorage();          
+
 
     // Added code to display the current date in the header of the page.
     function displayTime() {
